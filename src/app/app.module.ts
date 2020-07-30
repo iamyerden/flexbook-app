@@ -8,6 +8,7 @@ import { FooterComponent } from './static/footer/footer.component';
 import { BrowseComponent } from './all/browse/browse.component';
 import { BookListComponent } from './all/browse/book-list/book-list.component';
 import { RecommendedBookComponent } from './all/browse/recommended-book/recommended-book.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RecommendedBookComponent } from './all/browse/recommended-book/recommen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
