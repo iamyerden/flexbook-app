@@ -1,6 +1,28 @@
-<div class="recommended-book">
+<div [ngClass]="show ? 'recommended-book full-height' : 'recommended-book overview-height'">
   <div class="container">
-    <p>recommended-book works!</p>
+    <div class="recommended-book-details" *ngIf="book && show; else overview">
+      <div class="recommended-book-title">{{book.title}}</div>
+      <div class="recommended-book-author">{{book.author}}</div>
+      <div class="recommended-book-description">{{book.description}}</div>
+    </div>
+
+    <div class="recommended-book-btn-lvl1"><a href="#">Read</a></div>
+    <div class="recommended-book-btn-lvl2">
+      <button (click)="show = !show" *ngIf="show; else myList">More Info</button>
+      <ng-template #myList><button (click)="addToMyList()">My List</button></ng-template>
+    </div>
+    <ng-template #overview><div class="recommended-book-details-overview" *ngIf="book">
+      <div class="recommended-book-title">{{book.title}}</div>
+      <div class="recommended-book-ageRating">{{book.ageRating}}+</div>
+      <div class="recommended-book-bookYear">{{book.bookYear}}</div>
+      <div class="recommended-book-author">{{book.author}}</div>
+      <div class="recommended-book-description">{{book.description}}</div>
+      <div class="recommended-book-genre">{{book.genre}}</div>
+      <div class="recommended-book-views">Views: {{book.viewCount}}</div>
+    </div></ng-template>
+    <div class="recommended-book-btn-lvl3" *ngIf="!show"><button (click)="show = !show">Back</button></div>
+
+<!--  Overview Menu  -->
   </div>
 </div>
 

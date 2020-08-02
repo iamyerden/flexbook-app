@@ -13,6 +13,7 @@ export class Book {
   // tslint:disable-next-line:variable-name
   book_published_at: any;
 
+
   constructor(id: number, title: string, author: string, bookYear: number, description: string, numOfChapters: number, genre: string[], isbn: string, ageRating: number, users: [], viewCount: number, book_published_at: any) {
     this.id = id;
     this.title = title;

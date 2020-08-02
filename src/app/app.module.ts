@@ -9,6 +9,7 @@ import { BrowseComponent } from './all/browse/browse.component';
 import { BookListComponent } from './all/browse/book-list/book-list.component';
 import { RecommendedBookComponent } from './all/browse/recommended-book/recommended-book.component';
 import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './all/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HttpClientModule} from '@angular/common/http';
     BrowseComponent,
     RecommendedBookComponent,
     BookListComponent,
-    RecommendedBookComponent
+    RecommendedBookComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
