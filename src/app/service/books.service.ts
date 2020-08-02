@@ -12,6 +12,10 @@ export class BooksService {
 
   private bookUrl = '/api/books';
 
+  recommendedBook(): Observable<any>{
+    return this.http.get<any>(`${this.bookUrl}/recommendedBook`);
+  }
+
   getAll(): Observable<any> {
     return this.http.get<any>(`${this.bookUrl}/all`);
   }
@@ -30,5 +34,9 @@ export class BooksService {
 
   deleteBook(bookId: number): Observable<any>{
     return this.http.delete(`${this.bookUrl}/${bookId}`);
+  }
+
+  getBooksByGenre(genre: any): Observable<any>{
+    return this.http.get<any>(`${this.bookUrl}/genre`, genre);
   }
 }

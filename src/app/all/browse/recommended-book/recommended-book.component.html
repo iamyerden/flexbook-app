@@ -17,7 +17,7 @@
       <div class="recommended-book-bookYear">{{book.bookYear}}</div>
       <div class="recommended-book-author">{{book.author}}</div>
       <div class="recommended-book-description">{{book.description}}</div>
-      <div class="recommended-book-genre">{{book.genre}}</div>
+      <div class="recommended-book-genre" *ngFor="let item of book.genre">{{item.name}}</div>
       <div class="recommended-book-views">Views: {{book.viewCount}}</div>
     </div></ng-template>
     <div class="recommended-book-btn-lvl3" *ngIf="!show"><button (click)="show = !show">Back</button></div>

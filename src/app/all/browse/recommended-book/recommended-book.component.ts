@@ -10,7 +10,6 @@ import {User} from '../../../model/user';
 })
 export class RecommendedBookComponent implements OnInit {
 
-  bookId: number;
   book: Book;
   user: User;
 
@@ -19,10 +18,11 @@ export class RecommendedBookComponent implements OnInit {
   constructor(private booksService: BooksService) { }
 
   ngOnInit(): void {
-    this.bookId = 1;
-    // this.booksService.getBook(this.bookId).subscribe(data => {
-    //   this.book = data;
-    // });
+    this.booksService.recommendedBook().subscribe(data => {
+      this.book = data;
+      this.book.genre = data.genreDTOS;
+      console.log(this.book.genre);
+    });
   }
 
   addToMyList(){

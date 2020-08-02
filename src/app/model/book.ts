@@ -1,3 +1,5 @@
+import {Genre} from './genre';
+
 export class Book {
   id: number;
   title: string;
@@ -5,16 +7,17 @@ export class Book {
   bookYear: number;
   description: string;
   numOfChapters: number;
-  genre: string[];
+  genre: Genre[];
   isbn: string;
   ageRating: number;
-  users: [];
+  users: any;
   viewCount: number;
   // tslint:disable-next-line:variable-name
   book_published_at: any;
 
 
-  constructor(id: number, title: string, author: string, bookYear: number, description: string, numOfChapters: number, genre: string[], isbn: string, ageRating: number, users: [], viewCount: number, book_published_at: any) {
+  // tslint:disable-next-line:variable-name
+  constructor(id: number, title: string, author: string, bookYear: number, description: string, numOfChapters: number, genre: Genre[], isbn: string, ageRating: number, users: any, viewCount: number, book_published_at: any) {
     this.id = id;
     this.title = title;
     this.author = author;
