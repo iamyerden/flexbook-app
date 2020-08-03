@@ -36,7 +36,7 @@ export class BooksService {
     return this.http.delete(`${this.bookUrl}/${bookId}`);
   }
 
-  getBooksByGenre(genre: any): Observable<any>{
-    return this.http.get<any>(`${this.bookUrl}/genre`, genre);
+  getBooksByGenre(genreName: string): Observable<any>{
+    return this.http.get<any>(`${this.bookUrl}/genre?genreName=${genreName}`);
   }
 }

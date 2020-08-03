@@ -1,5 +1,19 @@
 <div class="book-list">
   <div class="container">
-
+    <div class="book-list-genre">
+      <div class="book-list-genre-title"><b>{{genreName}}</b></div>
+      <br>
+      <div class="book-list-genre-details" *ngFor="let book of books">
+        {{book.title}}
+        {{book.ageRating}}+
+        {{book.bookYear}}
+        {{book.author}}
+        {{book.description}}
+        <div class="recommended-book-genre" *ngFor="let item of book.genreDTOS">{{item.name}}</div>
+        Views: {{book.viewCount}}
+        <br>
+      </div>
+    </div>
+    <hr>
   </div>
 </div>
