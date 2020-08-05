@@ -39,4 +39,8 @@ export class BooksService {
   getBooksByGenre(genreName: string): Observable<any>{
     return this.http.get<any>(`${this.bookUrl}/genre?genreName=${genreName}`);
   }
+
+  recommendedGenres(): Observable<any>{
+    return this.http.get<any>(`${this.bookUrl}/recommendedGenres`);
+  }
 }

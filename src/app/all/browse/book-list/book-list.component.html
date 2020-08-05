@@ -7,11 +7,15 @@
         {{book.title}}
         {{book.ageRating}}+
         {{book.bookYear}}
-        {{book.author}}
-        {{book.description}}
-        <div class="recommended-book-genre" *ngFor="let item of book.genreDTOS">{{item.name}}</div>
-        Views: {{book.viewCount}}
         <br>
+        {{book.author}}
+        <br>
+        Description: {{book.description}}
+        <br>
+        <b>Genre:</b>
+        <div class="recommended-book-genre" *ngFor="let item of book.genreDTOS">{{item.name}}</div>
+        <b>Views:</b> {{book.viewCount}}
+        <br><br>
       </div>
     </div>
     <hr>
