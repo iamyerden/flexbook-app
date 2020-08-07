@@ -12,8 +12,8 @@ export class BooksService {
 
   private bookUrl = '/api/books';
 
-  recommendedBook(): Observable<any>{
-    return this.http.get<any>(`${this.bookUrl}/recommendedBook`);
+  recommendedBook(genreName: string): Observable<any>{
+    return this.http.get<any>(`${this.bookUrl}/recommendedBook?genreName=${genreName}`);
   }
 
   getAll(): Observable<any> {

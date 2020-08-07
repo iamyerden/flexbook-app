@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {BrowseComponent} from './all/browse/browse.component';
 
 
 const routes: Routes = [
-  { path: 'browse',  component: BrowseComponent },
-  { path: '',  redirectTo: 'browse', pathMatch: 'full' }
+  { path: '', loadChildren: () => import('./all/all.module').then(allModule => allModule.AllModule) }
 ];
 
 @NgModule({

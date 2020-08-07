@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BooksService} from '../../service/books.service';
+import {log} from 'util';
 
 @Component({
   selector: 'app-browse',
@@ -7,6 +8,8 @@ import {BooksService} from '../../service/books.service';
   styleUrls: ['./browse.component.scss']
 })
 export class BrowseComponent implements OnInit {
+
+  genreList: string[] = ['Fantasy', 'Adventure', 'Mythology'];
 
   constructor(private booksService: BooksService) { }
 

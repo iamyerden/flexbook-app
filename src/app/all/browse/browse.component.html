@@ -1,6 +1,6 @@
-<app-recommended-book></app-recommended-book>
+<app-recommended-book genreName="All"></app-recommended-book>
 <div class="container">
-  <app-book-list genreName="Fantasy"></app-book-list>
-  <app-book-list genreName="Adventure"></app-book-list>
-  <app-book-list genreName="Mythology"></app-book-list>
+  <div class="book-lists" *ngFor="let genreName of genreList">
+    <app-book-list genreName="{{genreName}}"></app-book-list>
+  </div>
 </div>

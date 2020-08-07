@@ -19,6 +19,7 @@ export class BookListComponent implements OnInit {
       this.books = data;
       console.log(this.genreName);
       console.log(this.books);
+
     });
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Book} from '../../../model/book';
 import {BooksService} from '../../../service/books.service';
 import {User} from '../../../model/user';
@@ -10,6 +10,8 @@ import {User} from '../../../model/user';
 })
 export class RecommendedBookComponent implements OnInit {
 
+  @Input() genreName: string;
+
   book: Book;
   user: User;
 
@@ -18,11 +20,13 @@ export class RecommendedBookComponent implements OnInit {
   constructor(private booksService: BooksService) { }
 
   ngOnInit(): void {
-    this.booksService.recommendedBook().subscribe(data => {
-      this.book = data;
-      this.book.genre = data.genreDTOS;
-      console.log(this.book.genre);
-    });
+    if (this.genreName){
+      this.booksService.recommendedBook(this.genreName).subscribe(data => {
+        this.book = data;
+        this.book.genre = data.genreDTOS;
+        console.log(this.book.genre);
+      });
+    }
   }
 
   addToMyList(){
