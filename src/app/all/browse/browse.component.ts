@@ -8,14 +8,15 @@ import {BooksService} from '../../service/books.service';
 })
 export class BrowseComponent implements OnInit {
 
-  genreList: string[] = ['Fantasy', 'Adventure', 'Mythology'];
+  genreList: any;
 
   constructor(private booksService: BooksService) { }
 
   ngOnInit(): void {
-    // this.booksService.recommendedGenres().subscribe(data => {
-    //   console.log(data);
-    // });
+    this.booksService.recommendedGenres().subscribe(data => {
+      this.genreList = data;
+      console.log(this.genreList);
+    });
   }
 
 }
