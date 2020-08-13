@@ -1,14 +1,22 @@
-<div class="container">
-  <div class="navBar">
-    <ul class="navBar-list">
-      <li class="navBar-item"><a routerLink="/browse" routerLinkActive="active">Home</a></li>
-      <li class="navBar-item"><a routerLink="/browse/books" routerLinkActive="active">Books</a></li>
-      <li class="navBar-item"><a routerLink="/browse/comics" routerLinkActive="active">Comics</a></li>
-      <li class="navBar-item"><a routerLink="latest" routerLinkActive="active">Latest</a></li>
-      <li class="navBar-item"><a routerLink="mylist" routerLinkActive="active">MyList</a></li>
-    </ul>
+<header>
+  <div class="container">
+    <div class="navBar" id="navBar">
+      <a class="navBar-logo" routerLink="/browse" routerLinkActive="active">Logo</a>
+      <ul class="navBar-list">
+        <li class="navBar-item"><a [routerLink]="['/browse']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact:
+true}">Home</a></li>
+        <li class="navBar-item"><a [routerLink]="['/browse/books']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact:
+true}">Books</a></li>
+        <li class="navBar-item"><a [routerLink]="['/browse/comics']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact:
+true}">Comics</a></li>
+        <li class="navBar-item"><a [routerLink]="['latest']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact:
+true}">Latest</a></li>
+        <li class="navBar-item"><a [routerLink]="['my-list']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact:
+true}">MyList</a></li>
+      </ul>
+    </div>
   </div>
-</div>
+</header>
 
 
 
