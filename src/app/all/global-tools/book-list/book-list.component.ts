@@ -9,13 +9,14 @@ import {BooksService} from '../../../service/books.service';
 export class BookListComponent implements OnInit {
 
   @Input() genreName: string;
+  @Input() genreGroup: string;
 
   books: any;
 
   constructor(private booksService: BooksService) { }
 
   ngOnInit(): void {
-    this.booksService.getBooksByGenre(this.genreName).subscribe(data => {
+    this.booksService.getBooksByGenre(this.genreGroup, this.genreName).subscribe(data => {
       this.books = data;
       console.log(this.genreName);
       console.log(this.books);

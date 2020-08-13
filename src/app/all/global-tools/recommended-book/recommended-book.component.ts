@@ -20,13 +20,11 @@ export class RecommendedBookComponent implements OnInit {
   constructor(private booksService: BooksService) { }
 
   ngOnInit(): void {
-    if (this.genreName){
-      this.booksService.recommendedBook(this.genreName).subscribe(data => {
-        this.book = data;
-        this.book.genre = data.genreDTOS;
-        console.log(this.book.genre);
-      });
-    }
+    this.booksService.recommendedBook(this.genreName).subscribe(data => {
+      this.book = data;
+      this.book.genre = data.genreDTOS;
+      console.log(this.book.genre);
+    });
   }
 
   addToMyList(){

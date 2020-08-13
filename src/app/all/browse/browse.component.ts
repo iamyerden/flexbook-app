@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {BooksService} from '../../service/books.service';
-import {log} from 'util';
 
 @Component({
   selector: 'app-browse',

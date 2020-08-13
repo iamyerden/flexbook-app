@@ -10,6 +10,7 @@ import {NavbarComponent} from '../static/navbar/navbar.component';
 import {FooterComponent} from '../static/footer/footer.component';
 import {RecommendedBookComponent} from './global-tools/recommended-book/recommended-book.component';
 import {BookListComponent} from './global-tools/book-list/book-list.component';
+import { ComicsComponent } from './comics/comics.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {BookListComponent} from './global-tools/book-list/book-list.component';
     AllComponent,
     NavbarComponent,
     FooterComponent,
+    ComicsComponent,
   ],
   imports: [
     CommonModule,

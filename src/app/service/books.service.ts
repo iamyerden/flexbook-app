@@ -13,7 +13,10 @@ export class BooksService {
   private bookUrl = '/api/books';
 
   recommendedBook(genreName: string): Observable<any>{
-    return this.http.get<any>(`${this.bookUrl}/recommendedBook?genreName=${genreName}`);
+    if (genreName){
+      return this.http.get<any>(`${this.bookUrl}/recommendedBook?genreName=${genreName}`);
+    }
+    return this.http.get<any>(`${this.bookUrl}/recommendedBook`);
   }
 
   getAll(): Observable<any> {
@@ -36,7 +39,10 @@ export class BooksService {
     return this.http.delete(`${this.bookUrl}/${bookId}`);
   }
 
-  getBooksByGenre(genreName: string): Observable<any>{
+  getBooksByGenre(genreGroup: string, genreName: string): Observable<any>{
+    if (genreGroup){
+      return this.http.get<any>(`${this.bookUrl}/genre?genreGroup=${genreGroup}&genreName=${genreName}`);
+    }
     return this.http.get<any>(`${this.bookUrl}/genre?genreName=${genreName}`);
   }
 
